@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/style.css" />
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+		var oT=document.getElementById('title');
+		var oImg=document.getElementById('img');
+		var oUl=document.getElementById('nav_t');
+		var aLi=oUl.getElementsByTagName('li');
+		var n=0;
+		var timer=null
+		var tim=null
+		
+		function show(n){
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].className=''	
+				}	
+				aLi[n].className='active';
+				oImg.src='img/'+n+'.png'
+			};	
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].index=i;
+			aLi[i].onmouseover=function(){
+				_this=this
+				tim=setTimeout(function(){
+					show(_this.index)
+					n=_this.index;
+				},800)
+			}
+			aLi[i].onmouseout=function(){
+				clearTimeout(tim)	
+			}
+		}
+		function next(){
+				n=n+1;
+				if(n>=aLi.length){
+					n=0;
+				}
+				show(n)
+		}
+		timer=setInterval(next,2000)
+		oT.onmouseover=function(){
+			clearInterval(timer)	
+		}
+		oT.onmouseout=function(){
+			timer=setInterval(next,2000)
+		}
+		
+}
+</script>
+</head>
+
+<body>
+<div class="title" id="title">
+	<ul class="img" >
+    	<li><a href=""><img id="img" src="img/0.png" alt="" /></a></li>
+    </ul>
+	<div class="banner">
+    	<div class="nav">
+        	<p></p>
+        	<ul id="nav_t">
+            	<li class="active"><a href="">北上广不相信眼泪：职场迷情</a></li>
+            	<li><a href="javascript:;">跑男3：鹿晗秒速抢答惊呆全场</a></li>
+            	<li><a href="javascript:;">云中歌：陈晓杜淳心声间隙</a></li>
+            	<li><a href="javascript:;">灵魂摆渡2：铁三角再续前缘</a></li>
+            	<li><a href="javascript:;">时尚江湖：李小璐花式晒幸福</a></li>
+            	<li><a href="javascript:;">新济公活佛：李威变身哈蒙王子</a></li>
+            	<li><a href="javascript:;">超模变身狂野电玩Queen</a></li>
+            	<li><a href="javascript:;">BBC狗狗秘闻：最有爱宠物大片</a></li>
+            	<li><a href="javascript:;">综艺大嘴巴：李易峰新综上线 </a></li>
+            	<li><a href="javascript:;">1117美图产品发布会</a></li>
+            </ul>
+        </div>
+        <div class="title-t">
+            <input type="text" value="" />
+            <p><a href="javascript:;"></a></p>
+            <ul>
+                <li><a href="javascript:;">登陆</a></li>
+                <li><a href="javascript:;">注册</a></li>
+                <li><a href="javascript:;">开通VIP</a></li>
+                <li><a href="javascript:;" class="a2">上传<span></span><i></i><b></b></a></li>
+                <li><a href="javascript:;"class="a1">下载<i></i></a></li>
+                <li><a href="javascript:;" class="a1">消息<span></span></a></li>
+                <li><a href="javascript:;" class="a1">播放记录<span></span></a></li>
+            </ul>
+    	</div>
+    </div>
+</div>
+<div class="nav-b">
+	<div class="nav">
+    	<span></span>
+        <i></i>
+    	<ul>
+        	<li class="l1">
+            	<div class="l1-l"><p>悦享品质</p></div>
+                <div class="l1-r">
+                    <ul>
+                        <li><a href="javaScript:;">娱乐</a></li>
+                        <li><a href="javaScript:;">体育</a></li>
+                        <li><a href="javaScript:;">资讯</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="l2">
+            	<ul>
+                	<li><a href="javaScrip:;">电影</a></li>
+                	<li><a href="javaScrip:;">电视剧</a></li>
+                	<li><a href="javaScrip:;">片花</a></li>
+                	<li><a href="javaScrip:;">综艺</a></li>
+                	<li><a href="javaScrip:;">微电影</a></li>
+                	<li><a href="javaScrip:;">脱口秀</a></li>
+                </ul>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
